@@ -1,37 +1,44 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(myApp());
+  runApp(MyApp());
 }
 
-class myApp extends StatelessWidget {
-  const myApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  void tekanTombol() {
+    setState(() {
+      number = number + 1;
+    });
+  }
+  int number = 0;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Latihan Container"),
+          title: Text("Latihan Statefull widget"),
         ),
-        body: Container(
-          margin: EdgeInsets.fromLTRB(10, 15, 20, 25),
-          padding: EdgeInsets.only(top: 10, bottom: 15),
-          color: Colors.red,
-          child: Container(
-              margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[
-                Colors.purple,
-                Colors.black12
-              ])
-            ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(number.toString(), style: TextStyle(fontSize: 10 + number.toDouble()),),
+              ElevatedButton(
+                child: Text("Tambah Bilangan"),
+                onPressed: tekanTombol,
+              )
+            ],
+          ),
         ),
       ),
-    ),);
+    );
   }
 }
