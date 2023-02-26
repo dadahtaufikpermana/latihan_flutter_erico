@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp( new myApp());
+void main() {
+  runApp(new myApp());
 }
+
 class myApp extends StatelessWidget {
   const myApp({Key? key}) : super(key: key);
 
@@ -13,11 +14,27 @@ class myApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("latihan Hello World"),
         ),
-        body: Center (child: Text("Hello World")),
-
+        body: Center(
+          child: Container(
+            color: Colors.lightBlue,
+            height: 100,
+            width: 150,
+              child: Center(
+                child: Text(
+                  "Nama saya dadah taufik permana, saya berasal dari garut jawa barat",
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ),
+          ),
+        ),
       ),
     );
   }
 }
-
-
