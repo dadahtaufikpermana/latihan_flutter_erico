@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new myApp());
+  runApp(myApp());
 }
 
 class myApp extends StatelessWidget {
@@ -12,29 +12,26 @@ class myApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Latihan Row dan Column"),
+          title: Text("Latihan Container"),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Text("text 1"),
-                Text("text 2"),
-                Text("text 3")
-              ],
+        body: Container(
+          margin: EdgeInsets.fromLTRB(10, 15, 20, 25),
+          padding: EdgeInsets.only(top: 10, bottom: 15),
+          color: Colors.red,
+          child: Container(
+              margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
+                Colors.purple,
+                Colors.black12
+              ])
             ),
-            Row(
-              children: <Widget>[
-                Text("Text 1"),
-                Text("Text 2"),
-                Text("Text 3")
-              ],
-            )
-          ],
         ),
       ),
-    );
+    ),);
   }
 }
