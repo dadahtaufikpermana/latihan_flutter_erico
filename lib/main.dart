@@ -12,27 +12,27 @@ class myApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("latihan Hello World"),
+          title: Text("Latihan Row dan Column"),
         ),
-        body: Center(
-          child: Container(
-            color: Colors.lightBlue,
-            height: 100,
-            width: 150,
-              child: Center(
-                child: Text(
-                  "Nama saya dadah taufik permana, saya berasal dari garut jawa barat",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ),
-          ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Text("text 1"),
+                Text("text 2"),
+                Text("text 3")
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Text("Text 1"),
+                Text("Text 2"),
+                Text("Text 3")
+              ],
+            )
+          ],
         ),
       ),
     );
